@@ -198,9 +198,38 @@ nav {
 .sharing-quote-icon { font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 0.6; color: var(--gold); opacity: 0.35; margin-bottom: 20px; display: block; font-weight: 700; }
 .sharing-text { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.15rem; color: rgba(245,240,232,0.88); line-height: 1.85; margin-bottom: 28px; }
 .sharing-author { display: flex; align-items: center; gap: 16px; border-top: 1px solid rgba(201,168,76,0.12); padding-top: 20px; }
-.sharing-author-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--dark); font-weight: 700; flex-shrink: 0; }
+.sharing-author-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--dark); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+.sharing-author-avatar img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; display: block; }
 .sharing-author-name { font-size: 1rem; color: var(--cream); font-weight: 500; letter-spacing: 0.05em; }
 .sharing-author-loc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.05em; }
+
+/* ── GALLERY CAROUSEL ── */
+.gallery-section { background: var(--dark2); padding: 96px 24px; }
+.gallery-carousel-wrap { position: relative; max-width: 900px; margin: 0 auto; border-radius: 6px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.6); user-select: none; }
+.gallery-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+.gallery-slide { min-width: 100%; position: relative; }
+.gallery-slide img { width: 100%; height: 520px; object-fit: cover; display: block; }
+.gallery-slide-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.72));
+  padding: 40px 28px 20px;
+  font-size: 0.9rem; color: rgba(245,240,232,0.88);
+  font-family: 'Cormorant Garamond', serif; font-style: italic; letter-spacing: 0.04em;
+}
+.gallery-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(13,13,13,0.72); border: 1px solid rgba(201,168,76,0.45);
+  color: var(--gold); font-size: 1.4rem; width: 48px; height: 48px;
+  border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s; z-index: 10; backdrop-filter: blur(4px);
+}
+.gallery-btn:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: translateY(-50%) scale(1.08); }
+.gallery-btn-prev { left: 16px; }
+.gallery-btn-next { right: 16px; }
+.gallery-dots { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.4); cursor: pointer; transition: all 0.25s; }
+.gallery-dot.active { background: var(--gold); transform: scale(1.35); border-color: var(--gold); }
+.gallery-counter { text-align: center; margin-top: 14px; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
 
 /* ── PROGRAM CARDS ── */
 .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
@@ -243,18 +272,6 @@ nav {
 .venue-card a { color: var(--gold); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
 .venue-card a:hover { text-decoration: underline; }
 
-/* ── ABOUT ── */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.about-text .section-title { text-align: left; }
-.about-text .section-label { text-align: left; }
-.about-text .section-divider { margin-left: 0; }
-.about-text p { font-size: 1rem; color: rgba(245,240,232,0.72); margin-bottom: 20px; line-height: 1.9; }
-.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
-.stat { border-left: 3px solid var(--gold); padding-left: 20px; }
-.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold); line-height: 1; font-weight: 600; }
-.stat-lbl { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
-.about-visual { text-align: center; font-size: 130px; opacity: 0.08; }
-
 /* ── FOOTER ── */
 footer { background: #080808; border-top: 1px solid rgba(201,168,76,0.2); text-align: center; padding: 56px 24px; }
 .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); margin-bottom: 8px; }
@@ -274,14 +291,14 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   .ie-feature { grid-template-columns: 1fr; }
   .ie-left { padding: 44px 28px; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
   .ie-right { padding: 36px 28px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-visual { display: none; }
   .venue-grid { grid-template-columns: 1fr; }
   .sharings-grid { grid-template-columns: 1fr; }
   .webinar-banner { padding: 28px 24px; }
   .webinar-banner-top { flex-direction: column; }
   .webinar-banner-right { flex-direction: row; flex-wrap: wrap; }
   .connect-strip-inner { flex-direction: column; text-align: center; }
+  .gallery-slide img { height: 340px; }
+  .gallery-btn { width: 38px; height: 38px; font-size: 1rem; }
 }
 @media(max-width: 600px) {
   .hero h1 { font-size: 2.8rem; }
@@ -292,6 +309,8 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   .webinar-details { flex-direction: column; }
   .webinar-zoom-credentials { flex-direction: column; gap: 8px; }
   .connect-strip-buttons { justify-content: center; }
+  .gallery-slide img { height: 240px; }
+  .gallery-btn { display: none; }
 }
 </style>
 </head>
@@ -310,9 +329,9 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
     <li><a href="#webinar">Free Webinar</a></li>
     <li><a href="#inner-engineering">Inner Engineering</a></li>
     <li><a href="#sharings">Sharings</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#programs">Programs</a></li>
     <li><a href="#venue">Venue</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="nav-cta-link">💬 WhatsApp</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
@@ -325,9 +344,9 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   <a href="#webinar" onclick="document.getElementById('mobileMenu').classList.remove('open')">Free Webinar</a>
   <a href="#inner-engineering" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inner Engineering</a>
   <a href="#sharings" onclick="document.getElementById('mobileMenu').classList.remove('open')">Sharings</a>
+  <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('open')">Gallery</a>
   <a href="#programs" onclick="document.getElementById('mobileMenu').classList.remove('open')">Programs</a>
   <a href="#venue" onclick="document.getElementById('mobileMenu').classList.remove('open')">Venue</a>
-  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
   <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="mob-cta">💬 WhatsApp Enquiry</a>
 </div>
 
@@ -361,52 +380,34 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
     <p class="section-label">✨ Coming Up First</p>
     <h2 class="section-title">Free Online Introductory Session</h2>
     <div class="section-divider"></div>
-
     <div class="webinar-banner">
       <div class="webinar-banner-top">
         <div class="webinar-banner-left">
           <span class="webinar-free-badge">✦ FREE · Online · Open to All</span>
           <h3>Discover the Science of<br/><span>Inner Well-being</span></h3>
           <p class="webinar-banner-desc">Join us for a complimentary online session to explore the Inner Engineering program — experience its transformative power from the comfort of your home. No prior experience needed.</p>
-
           <div class="webinar-details">
             <div class="webinar-detail-item">
               <span class="webinar-detail-icon">📅</span>
-              <div class="webinar-detail-text">
-                <strong>Date</strong>
-                <span>Sunday, 26 April 2026</span>
-              </div>
+              <div class="webinar-detail-text"><strong>Date</strong><span>Sunday, 26 April 2026</span></div>
             </div>
             <div class="webinar-detail-item">
               <span class="webinar-detail-icon">🕕</span>
-              <div class="webinar-detail-text">
-                <strong>Time</strong>
-                <span>6:00 PM</span>
-              </div>
+              <div class="webinar-detail-text"><strong>Time</strong><span>6:00 PM</span></div>
             </div>
             <div class="webinar-detail-item">
               <span class="webinar-detail-icon">🗣</span>
-              <div class="webinar-detail-text">
-                <strong>Language</strong>
-                <span>English</span>
-              </div>
+              <div class="webinar-detail-text"><strong>Language</strong><span>English</span></div>
             </div>
             <div class="webinar-detail-item">
               <span class="webinar-detail-icon">🫂</span>
-              <div class="webinar-detail-text">
-                <strong>Who Can Attend</strong>
-                <span>Open to All!</span>
-              </div>
+              <div class="webinar-detail-text"><strong>Who Can Attend</strong><span>Open to All!</span></div>
             </div>
             <div class="webinar-detail-item">
               <span class="webinar-detail-icon">💻</span>
-              <div class="webinar-detail-text">
-                <strong>Platform</strong>
-                <span>Zoom (Online)</span>
-              </div>
+              <div class="webinar-detail-text"><strong>Platform</strong><span>Zoom (Online)</span></div>
             </div>
           </div>
-
           <div class="webinar-zoom-box">
             <p>💻 <strong style="color:var(--cream);">How to Join — Click the Zoom link below:</strong></p>
             <a href="https://ishafoundation-org.zoom.us/j/91772021220?pwd=VEXq0JaWCvRtApl1BlskL13QPbwgvg.1" target="_blank" class="zoom-link">
@@ -418,7 +419,6 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
             </div>
           </div>
         </div>
-
         <div class="webinar-banner-right">
           <a href="https://ishafoundation-org.zoom.us/j/91772021220?pwd=VEXq0JaWCvRtApl1BlskL13QPbwgvg.1" target="_blank" class="btn btn-zoom">💻 Join Zoom Session</a>
           <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">✍ Register for Program</a>
@@ -524,13 +524,9 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         <div class="sharing-quote-icon">"</div>
         <p class="sharing-text">This program is a turning point in my life and two phases of my life are life before Shambhavi and life after Shambhavi. After the program I'm more joyful, exuberant and energetic throughout the day. Enormous gratitude to Sadhguru for offering these tools of well-being to us.</p>
         <div class="sharing-author">
-          <div class="sharing-author-avatar" style="background:none;overflow:hidden;">
-        <img src="yukesh.jpg" 
-       style="width:46px;height:46px;border-radius:50%;object-fit:cover;display:block;" 
-       alt="Yukesh"
-       onerror="this.parentElement.innerHTML='Y'"/>
-        </div>
-
+          <div class="sharing-author-avatar">
+            <img src="yukesh.jpg" alt="Yukesh" onerror="this.parentElement.innerHTML='Y'"/>
+          </div>
           <div>
             <div class="sharing-author-name">Yukesh</div>
             <div class="sharing-author-loc">📍 Kelambakkam, Chennai</div>
@@ -538,9 +534,77 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         </div>
       </div>
 
-      <!-- ADD NEW SHARING HERE — copy block above, change letter, name, location and text -->
+      <!-- ══════════════════════════════════════
+           ADD NEW SHARING HERE
+           Copy the block above, paste below,
+           change name, location, text, and image src.
+           If no photo, replace <img .../> with the person's initial letter, e.g.: R
+      ══════════════════════════════════════ -->
 
     </div>
+  </div>
+</section>
+
+<!-- ══ PHOTO GALLERY ══ -->
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <p class="section-label">📸 Program Moments</p>
+    <h2 class="section-title">From Our OMR Community</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">Glimpses from programs, participants and volunteers who bring Isha Yoga to life at OMR Chennai.</p>
+
+    <div class="gallery-carousel-wrap" id="galleryWrap">
+      <div class="gallery-track" id="galleryTrack">
+
+        <!-- SLIDE 1 — file: 1.jpg -->
+        <div class="gallery-slide">
+          <img src="1.jpg" alt="Program Photo 1"/>
+          <div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div>
+        </div>
+
+        <!-- SLIDE 2 — file: 2.jpg -->
+        <div class="gallery-slide">
+          <img src="2.jpg" alt="Program Photo 2"/>
+          <div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div>
+        </div>
+
+        <!-- SLIDE 3 — file: 3.jpg -->
+        <div class="gallery-slide">
+          <img src="3.jpg" alt="Program Photo 3"/>
+          <div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div>
+        </div>
+
+        <!-- SLIDE 4 — file: 4.jpg -->
+        <div class="gallery-slide">
+          <img src="4.jpg" alt="Program Photo 4"/>
+          <div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div>
+        </div>
+
+        <!-- SLIDE 5 — file: 5.jpg -->
+        <div class="gallery-slide">
+          <img src="5.jpg" alt="Program Photo 5"/>
+          <div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div>
+        </div>
+
+        <!-- TO ADD MORE: copy a slide block above, change src to 6.jpg etc.
+             Also add one more <div class="gallery-dot" onclick="galleryGoTo(5)"></div> in the dots below -->
+
+      </div>
+
+      <!-- Arrow Buttons -->
+      <button class="gallery-btn gallery-btn-prev" onclick="galleryMove(-1)" aria-label="Previous">&#8592;</button>
+      <button class="gallery-btn gallery-btn-next" onclick="galleryMove(1)" aria-label="Next">&#8594;</button>
+    </div>
+
+    <!-- Dot Indicators -->
+    <div class="gallery-dots" id="galleryDots">
+      <div class="gallery-dot active" onclick="galleryGoTo(0)"></div>
+      <div class="gallery-dot" onclick="galleryGoTo(1)"></div>
+      <div class="gallery-dot" onclick="galleryGoTo(2)"></div>
+      <div class="gallery-dot" onclick="galleryGoTo(3)"></div>
+      <div class="gallery-dot" onclick="galleryGoTo(4)"></div>
+    </div>
+    <div class="gallery-counter" id="galleryCounter">1 / 5</div>
   </div>
 </section>
 
@@ -578,7 +642,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         </div>
       </div>
 
-      <!-- CARD 2: SHAKTI CHALANA KRIYA REFRESHER  -->
+      <!-- CARD 2: SHAKTI CHALANA KRIYA REFRESHER -->
       <div class="prog-card">
         <div class="prog-card-header purple">
           <span class="prog-card-header-emoji">🧘</span>
@@ -587,7 +651,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
           <p>Practice Correction Session (Live Streaming)</p>
         </div>
         <div class="prog-card-body">
-          <span class="prog-tag">Existing Practitioners only </span>
+          <span class="prog-tag">Existing Practitioners only</span>
           <div class="prog-meta">
             <div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>Sunday, 26 April 2026</span></div>
             <div class="prog-meta-row"><span class="prog-meta-icon">⏰</span><span>7:30 AM – 10:30 AM</span></div>
@@ -629,53 +693,4 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════
-           ADD NEW PROGRAM HERE
-           Copy a card block above, paste here,
-           update details. Header: orange / teal / purple
-      ══════════════════════════════════════ -->
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ QUOTE BAND ══ -->
-<div class="quote-band">
-  <blockquote>
-    "Yoga is not about being superhuman — it is about realizing that being human is super."
-    <cite>— Sadhguru</cite>
-  </blockquote>
-</div>
-
-<!-- ══ VENUE ══ -->
-<section class="section section-bg-dark2" id="venue">
-  <div class="section-inner">
-    <p class="section-label">Find Us</p>
-    <h2 class="section-title">Program Venue</h2>
-    <div class="section-divider"></div>
-    <p class="section-sub">All programs are held at accessible school premises along OMR, Sholinganallur — easily reachable from across Chennai.</p>
-    <div class="venue-grid">
-      <div class="venue-card">
-        <h3>📍 Sree Iyappa School</h3>
-        <p>Sholinganallur, OMR<br/>Chennai – 600119</p>
-        <p class="venue-programs">Inner Engineering · Shakti Chalana Kriya</p>
-        <a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">Open in Google Maps ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-logo">🪷 Isha Yoga Center · OMR Chennai</div>
-  <p class="footer-sub">A volunteer-run center · Sholinganallur, Chennai</p>
-  <div class="footer-divider"></div>
-  <div class="footer-connect">
-    <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold" style="padding:10px 24px;font-size:0.7rem;">✍ Register for Inner Engineering</a>
-    <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp" style="padding:10px 24px;font-size:0.7rem;">💬 WhatsApp Enquiry Group</a>
-    <a href="https://ishafoundation-org.zoom.us/j/91772021220?pwd=VEXq0JaWCvRtApl1BlskL13QPbwgvg.1" target="_blank" class="btn btn-zoom" style="padding:10px 24px;font-size:0.7rem;">💻 Join Free Online Intro</a>
-  </div>
-  <div class="footer-divider"></div>
-  <div class="footer-links">
-    <a href="https://isha.co/ie-omr" target="_blank">Inner Engineering</a>
-    <a href
+      <!-- ══════════════════════
