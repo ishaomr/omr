@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Isha Yoga Center – OMR Chennai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dark: #a8863a;
+  --dark: #0d0d0d;
+  --dark2: #141414;
+  --dark3: #1c1c1c;
+  --dark4: #222222;
+  --cream: #f5f0e8;
+  --muted: #999;
+  --green: #4a7c59;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 68px;
+  background: rgba(13,13,13,0.97);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  backdrop-filter: blur(12px);
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem; color: var(--cream); letter-spacing: 0.08em;
+}
+.nav-logo-sub {
+  font-size: 0.65rem; letter-spacing: 0.28em; color: var(--gold);
+  text-transform: uppercase; display: block; margin-top: -2px;
+}
+.nav-links { display: flex; gap: 0; list-style: none; height: 68px; }
+.nav-links a {
+  color: var(--cream); text-decoration: none; font-size: 0.75rem;
+  letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
+  padding: 0 18px; height: 68px; display: flex; align-items: center;
+  border-bottom: 2px solid transparent; transition: all 0.25s; margin-top: 2px;
+  opacity: 0.8;
+}
+.nav-links a:hover { color: var(--gold); border-bottom-color: var(--gold); opacity: 1; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 55% 45%, rgba(201,168,76,0.1) 0%, transparent 65%),
+              linear-gradient(160deg, #0d0d0d 0%, #111a0f 50%, #0d0d0d 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 50%, rgba(201,168,76,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-lotus {
+  font-size: 280px; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); opacity: 0.04; pointer-events: none; line-height: 1;
+}
+.hero-top-label {
+  font-size: 0.8rem; letter-spacing: 0.45em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 24px; font-weight: 500;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 600; line-height: 1.05;
+  color: var(--cream); max-width: 840px; letter-spacing: 0.02em;
+}
+.hero h1 em {
+  color: var(--gold); font-style: italic; display: block;
+  font-weight: 300; font-size: 0.68em; margin-top: 8px; letter-spacing: 0.04em;
+}
+.hero-divider { width: 52px; height: 2px; background: var(--gold); margin: 30px auto; opacity: 0.7; border-radius: 2px; }
+.hero-tagline {
+  font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+  font-size: 1.25rem; color: rgba(245,240,232,0.65); max-width: 540px; line-height: 1.8;
+}
+.hero-tagline cite {
+  display: block; font-size: 0.85rem; margin-top: 12px;
+  color: var(--gold); font-style: normal; letter-spacing: 0.15em;
+}
+.hero-date-pill {
+  margin-top: 36px;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 3px; padding: 18px 44px; display: inline-block;
+}
+.hero-date-pill .lbl {
+  font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 6px; font-weight: 500;
+}
+.hero-date-pill .val {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream);
+}
+.hero-cta { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; margin-top: 36px; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block; padding: 14px 36px; border-radius: 2px;
+  text-decoration: none; font-size: 0.78rem; letter-spacing: 0.2em;
+  text-transform: uppercase; transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+}
+.btn-gold { background: var(--gold); color: var(--dark); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
+.btn-outline:hover { background: rgba(201,168,76,0.12); transform: translateY(-2px); }
+.btn-outline-light { border: 1px solid rgba(245,240,232,0.4); color: var(--cream); background: transparent; }
+.btn-outline-light:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── SECTION COMMONS ── */
+.section { padding: 96px 24px; }
+.section-bg-dark  { background: var(--dark); }
+.section-bg-dark2 { background: var(--dark2); }
+.section-bg-dark3 { background: var(--dark3); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; letter-spacing: 0.42em; color: var(--gold);
+  text-transform: uppercase; text-align: center; margin-bottom: 12px; font-weight: 500;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600; text-align: center; color: var(--cream);
+  margin-bottom: 14px; line-height: 1.15; letter-spacing: 0.02em;
+}
+.section-sub {
+  text-align: center; color: var(--muted); font-size: 1rem;
+  max-width: 580px; margin: 0 auto 60px; line-height: 1.8;
+}
+.section-divider { width: 48px; height: 2px; background: var(--gold); margin: 16px auto 52px; border-radius: 2px; opacity: 0.7; }
+
+/* ── INNER ENGINEERING FEATURED ── */
+.ie-feature {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.5);
+}
+.ie-left {
+  background: linear-gradient(150deg, #141a0f 0%, #0d1409 100%);
+  padding: 60px 52px; position: relative; overflow: hidden;
+  border-right: 1px solid rgba(201,168,76,0.15);
+}
+.ie-left::after {
+  content: '🪷'; font-size: 220px; position: absolute;
+  bottom: -50px; right: -30px; opacity: 0.05; pointer-events: none;
+}
+.ie-primary-badge {
+  display: inline-block; background: var(--gold); color: var(--dark);
+  font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 2px; margin-bottom: 28px; font-weight: 600;
+}
+.ie-left h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 600; color: var(--cream); line-height: 1.08; margin-bottom: 8px;
+}
+.ie-left h2 span { color: var(--gold); }
+.ie-left .ie-sub {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.2rem; color: rgba(245,240,232,0.6); margin-bottom: 28px;
+}
+.ie-kriya {
+  font-size: 0.8rem; letter-spacing: 0.15em; color: var(--gold);
+  text-transform: uppercase; border-left: 3px solid var(--gold);
+  padding-left: 16px; margin-bottom: 36px; font-weight: 500;
+}
+.ie-benefits { list-style: none; margin-bottom: 40px; }
+.ie-benefits li {
+  font-size: 1rem; color: rgba(245,240,232,0.85); padding: 10px 0 10px 26px;
+  position: relative; border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.ie-benefits li:last-child { border-bottom: none; }
+.ie-benefits li::before { content: '◆'; color: var(--gold); position: absolute; left: 0; font-size: 0.5rem; top: 14px; }
+
+.ie-right { background: var(--dark3); padding: 60px 48px; }
+.ie-block-label {
+  font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold);
+  text-transform: uppercase; font-weight: 600; margin-bottom: 20px;
+}
+.ie-time-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+.ie-time-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.ie-time-text strong { display: block; font-size: 1rem; color: var(--cream); font-weight: 600; }
+.ie-time-text span { font-size: 0.9rem; color: var(--muted); }
+.ie-sep { height: 1px; background: rgba(201,168,76,0.15); margin: 28px 0; }
+.ie-intro-box {
+  background: rgba(201,168,76,0.06); border-left: 3px solid var(--gold);
+  padding: 18px 22px; margin-bottom: 28px; border-radius: 0 3px 3px 0;
+}
+.ie-intro-box .intro-lbl {
+  font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold);
+  text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
+}
+.ie-intro-box p { font-size: 0.95rem; color: var(--cream); line-height: 1.8; }
+.ie-venue-text { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 8px; }
+.ie-venue-text a { color: var(--gold); text-decoration: none; font-size: 0.88rem; }
+.ie-venue-text a:hover { text-decoration: underline; }
+.ie-lang { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 32px; }
+.ie-lang strong { color: var(--cream); }
+
+/* ── SHARINGS ── */
+.sharings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.sharing-card {
+  background: var(--dark2);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 4px;
+  padding: 40px 36px 32px;
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.sharing-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201,168,76,0.45);
+}
+.sharing-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 4px 4px 0 0;
+}
+.sharing-quote-icon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; line-height: 0.6;
+  color: var(--gold); opacity: 0.35;
+  margin-bottom: 20px; display: block;
+  font-weight: 700;
+}
+.sharing-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(245,240,232,0.88);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+.sharing-author {
+  display: flex; align-items: center; gap: 16px;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding-top: 20px;
+}
+.sharing-author-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; color: var(--dark); font-weight: 700;
+  flex-shrink: 0;
+}
+.sharing-author-name {
+  font-size: 1rem; color: var(--cream); font-weight: 500; letter-spacing: 0.05em;
+}
+.sharing-author-loc {
+  font-size: 0.78rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.05em;
+}
+
+/* ── PROGRAM CARDS ── */
+.programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+.prog-card {
+  background: var(--dark3); border-radius: 4px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.12);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  display: flex; flex-direction: column;
+}
+.prog-card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.45); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+.prog-card-header { padding: 30px 30px 22px; position: relative; }
+.prog-card-header.orange { background: linear-gradient(135deg, #7c3a10, #c4591e); }
+.prog-card-header.teal   { background: linear-gradient(135deg, #0f3a3a, #1a6060); }
+.prog-card-header.purple { background: linear-gradient(135deg, #2e0f50, #5a2090); }
+.prog-card-header-emoji { font-size: 2.2rem; display: block; margin-bottom: 12px; }
+.prog-card-date {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(0,0,0,0.35); border-radius: 3px; padding: 8px 14px; text-align: center;
+}
+.prog-card-date .d {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem;
+  color: var(--gold-light); line-height: 1;
+}
+.prog-card-date .m { font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.7); text-transform: uppercase; }
+.prog-card-header h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.55rem;
+  color: #fff; margin-bottom: 5px; font-weight: 600;
+}
+.prog-card-header p { font-size: 0.82rem; color: rgba(255,255,255,0.72); }
+.prog-card-body { padding: 26px 30px 32px; flex: 1; display: flex; flex-direction: column; }
+.prog-tag {
+  display: inline-block; background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.28); color: var(--gold);
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 18px; font-weight: 500;
+}
+.prog-meta { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.prog-meta-row { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--cream); }
+.prog-meta-icon { flex-shrink: 0; }
+.prog-meta-row a { color: var(--gold); text-decoration: none; font-size: 0.88rem; }
+.prog-meta-row a:hover { text-decoration: underline; }
+.prog-benefits { list-style: none; margin-bottom: 22px; flex: 1; }
+.prog-benefits li {
+  font-size: 0.92rem; color: rgba(245,240,232,0.78); padding: 6px 0 6px 22px;
+  position: relative; border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.prog-benefits li:last-child { border-bottom: none; }
+.prog-benefits li::before { content: '◆'; color: var(--gold); position: absolute; left: 0; font-size: 0.45rem; top: 11px; }
+.prog-card-body .btn { text-align: center; display: block; margin-top: auto; }
+
+/* ── QUOTE BAND ── */
+.quote-band {
+  background: linear-gradient(135deg, #1a1200, #2a1e00);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 64px 24px; text-align: center;
+}
+.quote-band blockquote {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--cream);
+  max-width: 720px; margin: 0 auto; line-height: 1.7; opacity: 0.9;
+}
+.quote-band cite {
+  display: block; font-size: 0.85rem; color: var(--gold);
+  margin-top: 18px; font-style: normal; letter-spacing: 0.2em; text-transform: uppercase;
+}
+
+/* ── VENUE ── */
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.venue-card {
+  background: var(--dark3); border-radius: 4px; padding: 36px;
+  border: 1px solid rgba(201,168,76,0.15);
+  border-top: 3px solid var(--gold);
+}
+.venue-card h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+  color: var(--cream); margin-bottom: 14px; font-weight: 600;
+}
+.venue-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 8px; }
+.venue-card .venue-programs {
+  font-size: 0.72rem; color: var(--gold); text-transform: uppercase;
+  letter-spacing: 0.12em; font-weight: 600; margin-bottom: 18px;
+}
+.venue-card a { color: var(--gold); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.venue-card a:hover { text-decoration: underline; }
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-text .section-title { text-align: left; }
+.about-text .section-label { text-align: left; }
+.about-text .section-divider { margin-left: 0; }
+.about-text p { font-size: 1rem; color: rgba(245,240,232,0.72); margin-bottom: 20px; line-height: 1.9; }
+.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+.stat { border-left: 3px solid var(--gold); padding-left: 20px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold); line-height: 1; font-weight: 600; }
+.stat-lbl { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+.about-visual { text-align: center; font-size: 130px; opacity: 0.08; }
+
+/* ── FOOTER ── */
+footer {
+  background: #080808; border-top: 1px solid rgba(201,168,76,0.2);
+  text-align: center; padding: 56px 24px;
+}
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); margin-bottom: 8px; }
+footer .footer-sub { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.14em; margin-bottom: 28px; }
+.footer-links { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-bottom: 28px; }
+.footer-links a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; opacity: 0.85; }
+.footer-links a:hover { color: var(--gold-light); opacity: 1; }
+.footer-divider { width: 36px; height: 1px; background: rgba(201,168,76,0.3); margin: 0 auto 22px; }
+footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .ie-feature { grid-template-columns: 1fr; }
+  .ie-left { padding: 44px 30px; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+  .ie-right { padding: 40px 30px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-visual { display: none; }
+  .venue-grid { grid-template-columns: 1fr; }
+  .sharings-grid { grid-template-columns: 1fr; }
+}
+@media(max-width: 600px) {
+  .hero h1 { font-size: 2.8rem; }
+  .ie-left h2 { font-size: 2.2rem; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .hero-date-pill { padding: 16px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span style="font-size:24px;">🪷</span>
+    <div>
+      <span class="nav-logo-text">Isha Yoga Center</span>
+      <span class="nav-logo-sub">OMR · Chennai</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inner-engineering">Inner Engineering</a></li>
+    <li><a href="#sharings">Sharings</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-lotus">🪷</div>
+  <p class="hero-top-label">🙏 Namaskaram — Isha Yoga Center · OMR Chennai</p>
+  <h1>
+    Inner Engineering
+    <em>Ordinary to Extraordinary</em>
+  </h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">
+    "The most fundamental thing a human being can do is to explore the nature of one's own existence."
+    <cite>— Sadhguru</cite>
+  </p>
+  <div class="hero-date-pill">
+    <div class="lbl">7-Day Program · OMR Chennai</div>
+    <div class="val">29 April – 5 May 2026</div>
+  </div>
+  <div class="hero-cta">
+    <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">Register Now — isha.co/ie-omr</a>
+    <a href="#programs" class="btn btn-outline-light">View All Programs</a>
+  </div>
+</section>
+
+<!-- ══ INNER ENGINEERING FEATURED ══ -->
+<section class="section section-bg-dark2" id="inner-engineering">
+  <div class="section-inner">
+    <p class="section-label">Featured Program</p>
+    <h2 class="section-title">Inner Engineering</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">A 7-day transformative program bringing you the science of inner wellbeing — offered by Isha volunteers at OMR, Chennai.</p>
+    <div class="ie-feature">
+      <!-- LEFT -->
+      <div class="ie-left">
+        <span class="ie-primary-badge">◆ Primary Program</span>
+        <h2>Inner<br/><span>Engineering</span></h2>
+        <p class="ie-sub">Ordinary to Extraordinary</p>
+        <p class="ie-kriya">Learn · Shambhavi Mahamudra Kriya</p>
+        <ul class="ie-benefits">
+          <li>Greater Coherence within the Brain</li>
+          <li>Improved Cardiac Health</li>
+          <li>Improved Sleep Quality</li>
+          <li>Improved Attention and Focus</li>
+        </ul>
+        <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">Register — isha.co/ie-omr</a>
+      </div>
+      <!-- RIGHT -->
+      <div class="ie-right">
+        <p class="ie-block-label">🗓 Program Schedule</p>
+        <div class="ie-time-row">
+          <span class="ie-time-icon">📅</span>
+          <div class="ie-time-text">
+            <strong>29 April – 5 May 2026</strong>
+          </div>
+        </div>
+        <div class="ie-time-row">
+          <span class="ie-time-icon">🌅</span>
+          <div class="ie-time-text">
+            <strong>Monday – Saturday</strong>
+            <span>6:00 – 9:00 AM &nbsp;|&nbsp; 6:00 – 9:00 PM</span>
+          </div>
+        </div>
+        <div class="ie-time-row">
+          <span class="ie-time-icon">🌞</span>
+          <div class="ie-time-text">
+            <strong>Sunday (Full Day)</strong>
+            <span>7:00 AM – 5:00 PM</span>
+          </div>
+        </div>
+        <div class="ie-sep"></div>
+        <div class="ie-intro-box">
+          <div class="intro-lbl">🆓 Free Intro Talk — Wed, 29 April</div>
+          <p>
+            🌄 Morning: 6:00 – 7:00 AM<br/>
+            🌇 Evening: 6:00 – 7:00 PM<br/>
+            <span style="color:var(--muted);font-size:0.85rem;">No registration needed — come experience before you commit</span>
+          </p>
+        </div>
+        <div class="ie-sep"></div>
+        <p class="ie-block-label">📍 Venue</p>
+        <p class="ie-venue-text">
+          Sree Iyappa School, Sholinganallur<br/>
+          OMR, Chennai – 600119<br/>
+          <a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">View on Google Maps ↗</a>
+        </p>
+        <p class="ie-lang">Language: <strong>English</strong></p>
+        <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold" style="display:block;text-align:center;">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHARINGS ══ -->
+<section class="section section-bg-dark3" id="sharings">
+  <div class="section-inner">
+    <p class="section-label">Participant Sharings</p>
+    <h2 class="section-title">Life After Shambhavi</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">Hear from those who have walked this path — real experiences from the OMR community.</p>
+    <div class="sharings-grid">
+
+      <!-- ── SHARING 1 ── -->
+      <div class="sharing-card">
+        <div class="sharing-quote-icon">"</div>
+        <p class="sharing-text">This program is a turning point in my life and two phases of my life are life before Shambhavi and life after Shambhavi. After the program I'm more joyful, exuberant and energetic throughout the day. Enormous gratitude to Sadhguru for offering these tools of well-being to us.</p>
+        <div class="sharing-author">
+          <div class="sharing-author-avatar">Y</div>
+          <div>
+            <div class="sharing-author-name">Yukesh</div>
+            <div class="sharing-author-loc">📍 Kelambakkam, Chennai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           ADD NEW SHARING HERE
+           Copy the block below, remove comment tags,
+           and fill in the details.
+           Change the avatar letter to first letter of name.
+
+      <div class="sharing-card">
+        <div class="sharing-quote-icon">"</div>
+        <p class="sharing-text">Participant sharing text goes here.</p>
+        <div class="sharing-author">
+          <div class="sharing-author-avatar">A</div>
+          <div>
+            <div class="sharing-author-name">Name</div>
+            <div class="sharing-author-loc">📍 Location</div>
+          </div>
+        </div>
+      </div>
+      ══════════════════════════════════════ -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ALL PROGRAMS ══
+     TO ADD A NEW PROGRAM:
+     1. Copy one .prog-card block below
+     2. Paste it inside .programs-grid
+     3. Update all the details
+     4. Change header class: orange / teal / purple
+════════════════════════════════════════ -->
+<section class="section section-bg-dark" id="programs">
+  <div class="section-inner">
+    <p class="section-label">April – May 2026</p>
+    <h2 class="section-title">All Upcoming Programs</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">Every program is offered by trained Isha volunteers — with love and commitment — to the OMR community.</p>
+    <div class="programs-grid">
+
+      <!-- ── CARD 1: SURYA SHAKTHI ── -->
+      <div class="prog-card">
+        <div class="prog-card-header orange">
+          <span class="prog-card-header-emoji">☀️</span>
+          <div class="prog-card-date"><div class="d">26</div><div class="m">Apr</div></div>
+          <h3>Surya Shakthi</h3>
+          <p>Free Yoga &amp; Miracle of Mind Meditation</p>
+        </div>
+        <div class="prog-card-body">
+          <span class="prog-tag">Free · Open to All · Age 7+</span>
+          <div class="prog-meta">
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>Sunday, 26 April 2026</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">⏰</span><span>7:00 AM – 9:00 AM</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>Sree Iyyappa Matric. Hr. Sec. School, 25 &amp; 30 Velu Naicker St, Sholinganallur, Chennai – 600119</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="https://g.co/kgs/Z1JMFm" target="_blank">Google Maps ↗</a></div>
+          </div>
+          <ul class="prog-benefits">
+            <li>Strengthens the heart and muscles</li>
+            <li>Lubricates the joints</li>
+            <li>Develops mental clarity and focus</li>
+          </ul>
+          <a href="https://isha.co/ss-omr" target="_blank" class="btn btn-gold">Register — isha.co/ss-omr</a>
+        </div>
+      </div>
+
+      <!-- ── CARD 2: SHAKTI CHALANA KRIYA ── -->
+      <div class="prog-card">
+        <div class="prog-card-header purple">
+          <span class="prog-card-header-emoji">🧘</span>
+          <div class="prog-card-date"><div class="d">26</div><div class="m">Apr</div></div>
+          <h3>Shakti Chalana Kriya</h3>
+          <p>Practice Correction Session (Live Streaming)</p>
+        </div>
+        <div class="prog-card-body">
+          <span class="prog-tag">Existing Practitioners</span>
+          <div class="prog-meta">
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>Sunday, 26 April 2026</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">⏰</span><span>7:30 AM – 10:30 AM</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>Sree Iyappa School, Sholinganallur</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="https://g.co/kgs/Z1JMFm" target="_blank">Google Maps ↗</a></div>
+          </div>
+          <ul class="prog-benefits">
+            <li>Clarify doubts in your existing practice</li>
+            <li>Correct and deepen your sadhana</li>
+            <li>Reconnect after a long break</li>
+            <li>Live streaming — guided correction</li>
+          </ul>
+          <a href="https://forms.gle/Zzkg7gJQrLDFxE6K7" target="_blank" class="btn btn-gold">Register Here ↗</a>
+        </div>
+      </div>
+
+      <!-- ── CARD 3: CHILDREN'S HATHA YOGA ── -->
+      <div class="prog-card">
+        <div class="prog-card-header teal">
+          <span class="prog-card-header-emoji">🌈</span>
+          <div class="prog-card-date"><div class="d">1–3</div><div class="m">May</div></div>
+          <h3>Children's Hatha Yoga</h3>
+          <p>Isha Hatha Yoga for Children</p>
+        </div>
+        <div class="prog-card-body">
+          <span class="prog-tag">Morning Program · All Children</span>
+          <div class="prog-meta">
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>1 – 3 May 2026</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">⏰</span><span>7:00 AM – 8:45 AM</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>Sree Iyyappa Matric. Hr. Sec. School, 25 &amp; 30 Velu Naicker St, Sholinganallur</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="https://g.co/kgs/uRmNYTV" target="_blank">Google Maps ↗</a></div>
+          </div>
+          <ul class="prog-benefits">
+            <li>Enhances concentration and memory</li>
+            <li>Improves mind and body coordination</li>
+            <li>Joyful blossoming of natural potential</li>
+          </ul>
+          <a href="https://isha.co/child-omr" target="_blank" class="btn btn-gold">Register — isha.co/child-omr</a>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           ADD NEW PROGRAM HERE
+           Copy block below, remove comment tags,
+           fill in your details.
+           Header color options: orange / teal / purple
+
+      <div class="prog-card">
+        <div class="prog-card-header orange">
+          <span class="prog-card-header-emoji">🌿</span>
+          <div class="prog-card-date"><div class="d">DD</div><div class="m">Mon</div></div>
+          <h3>Program Name</h3>
+          <p>Short description line</p>
+        </div>
+        <div class="prog-card-body">
+          <span class="prog-tag">Tag here</span>
+          <div class="prog-meta">
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>Date</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">⏰</span><span>Time</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>Venue</span></div>
+            <div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="MAP_LINK" target="_blank">Google Maps ↗</a></div>
+          </div>
+          <ul class="prog-benefits">
+            <li>Benefit one</li>
+            <li>Benefit two</li>
+            <li>Benefit three</li>
+          </ul>
+          <a href="REGISTER_LINK" target="_blank" class="btn btn-gold">Register Now</a>
+        </div>
+      </div>
+      ══════════════════════════════════════ -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTE BAND ══ -->
+<div class="quote-band">
+  <blockquote>
+    "Yoga is not about being superhuman — it is about realizing that being human is super."
+    <cite>— Sadhguru</cite>
+  </blockquote>
+</div>
+
+<!-- ══ VENUE ══ -->
+<section class="section section-bg-dark2" id="venue">
+  <div class="section-inner">
+    <p class="section-label">Find Us</p>
+    <h2 class="section-title">Program Venue</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">All programs are held at accessible school premises along OMR, Sholinganallur</p>   
+      <div class="venue-card">
+        <h3>📍 Sree Iyappa School</h3>
+        <p>Sholinganallur, OMR</p>
+        <p class="venue-programs">Inner Engineering · Shakti Chalana Kriya</p>
+        <a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">Open in Google Maps ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">🪷 Isha Yoga Center · OMR Chennai</div>
+  <p class="footer-sub">A volunteer-run center · Sholinganallur, Chennai</p>
+  <div class="footer-divider"></div>
+  <div class="footer-links">
+    <a href="https://isha.co/ie-omr" target="_blank">Inner Engineering</a>
+    <a href="https://isha.co/ss-omr" target="_blank">Surya Shakthi</a>
+    <a href="https://isha.co/child-omr" target="_blank">Children's Yoga</a>
+    <a href="https://forms.gle/Zzkg7gJQrLDFxE6K7" target="_blank">Shakti Chalana Kriya</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">With love and bliss — Isha Volunteers, OMR Chennai 🌸</p>
+</footer>
+
+</body>
+</html>
