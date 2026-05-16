@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Isha Yoga Center – OMR Chennai</title>
+<title>Loading...</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <script>
-var PROGRAMS_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=0&single=true&output=csv';
-var SHARINGS_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=111677439&single=true&output=csv';
+var CONFIG_URL   = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=920024881&single=true&output=csv';
+var PROGRAMS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=0&single=true&output=csv';
+var SHARINGS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=111677439&single=true&output=csv';
 </script>
 <style>
 :root{--gold:#c9a84c;--gold-light:#e8c97a;--gold-dark:#a8863a;--dark:#0d0d0d;--dark2:#141414;--dark3:#1c1c1c;--cream:#f5f0e8;--muted:#999;}
@@ -17,10 +18,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
 .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--cream);letter-spacing:0.08em;}
 .nav-logo-sub{font-size:0.65rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;display:block;margin-top:-2px;}
-.nav-links{display:flex;gap:0;list-style:none;height:68px;}
+.nav-links{display:flex;list-style:none;height:68px;}
 .nav-links a{color:var(--cream);text-decoration:none;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;padding:0 14px;height:68px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all 0.25s;opacity:0.8;}
 .nav-links a:hover{color:var(--gold);border-bottom-color:var(--gold);opacity:1;}
-.nav-links .nav-cta-link{background:var(--gold);color:var(--dark)!important;border-radius:2px;padding:0 20px!important;margin:auto 0;height:38px!important;font-weight:600!important;border-bottom:none!important;opacity:1!important;}
+.nav-links .nav-cta{background:var(--gold);color:var(--dark)!important;border-radius:2px;padding:0 20px!important;margin:auto 0;height:38px!important;font-weight:600!important;border-bottom:none!important;opacity:1!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
 .hamburger span{width:24px;height:2px;background:var(--gold);border-radius:2px;display:block;}
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:998;background:rgba(13,13,13,0.99);border-bottom:1px solid rgba(201,168,76,0.2);padding:16px 0;flex-direction:column;}
@@ -31,7 +32,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .hero-lotus{font-size:280px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.04;pointer-events:none;line-height:1;}
 .hero-top-label{font-size:0.8rem;letter-spacing:0.45em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;font-weight:500;}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:600;line-height:1.05;color:var(--cream);max-width:840px;letter-spacing:0.02em;}
-.hero h1 em{color:var(--gold);font-style:italic;display:block;font-weight:300;font-size:0.68em;margin-top:8px;letter-spacing:0.04em;}
+.hero h1 em{color:var(--gold);font-style:italic;display:block;font-weight:300;font-size:0.68em;margin-top:8px;}
 .hero-divider{width:52px;height:2px;background:var(--gold);margin:30px auto;opacity:0.7;border-radius:2px;}
 .hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:rgba(245,240,232,0.65);max-width:540px;line-height:1.8;}
 .hero-tagline cite{display:block;font-size:0.85rem;margin-top:12px;color:var(--gold);font-style:normal;letter-spacing:0.15em;}
@@ -41,22 +42,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:36px;}
 .btn{display:inline-block;padding:14px 36px;border-radius:2px;text-decoration:none;font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;font-family:'Montserrat',sans-serif;font-weight:500;border:none;cursor:pointer;}
 .btn-gold{background:var(--gold);color:var(--dark);}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
-.btn-outline{border:1px solid var(--gold);color:var(--gold);background:transparent;}.btn-outline:hover{background:rgba(201,168,76,0.12);}
-.btn-whatsapp{background:#25D366;color:#fff;}.btn-whatsapp:hover{background:#20b858;}
-.btn-zoom{background:#2D8CFF;color:#fff;}.btn-zoom:hover{background:#1a7ae0;}
+.btn-outline{border:1px solid var(--gold);color:var(--gold);background:transparent;}.btn-outline:hover{background:rgba(201,168,76,0.12);transform:translateY(-2px);}
+.btn-whatsapp{background:#25D366;color:#fff;}.btn-whatsapp:hover{background:#20b858;transform:translateY(-2px);}
+.btn-zoom{background:#2D8CFF;color:#fff;}.btn-zoom:hover{background:#1a7ae0;transform:translateY(-2px);}
 .section{padding:96px 24px;}.section-bg-dark{background:var(--dark);}.section-bg-dark2{background:var(--dark2);}.section-bg-dark3{background:var(--dark3);}
 .section-inner{max-width:1100px;margin:0 auto;}
 .section-label{font-size:0.72rem;letter-spacing:0.42em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:12px;font-weight:500;}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:600;text-align:center;color:var(--cream);margin-bottom:14px;line-height:1.15;}
 .section-sub{text-align:center;color:var(--muted);font-size:1rem;max-width:580px;margin:0 auto 60px;line-height:1.8;}
 .section-divider{width:48px;height:2px;background:var(--gold);margin:16px auto 52px;border-radius:2px;opacity:0.7;}
-.webinar-banner{background:linear-gradient(135deg,#0a1a0a 0%,#0f2010 50%,#0a1a0a 100%);border:1px solid rgba(201,168,76,0.3);border-left:4px solid var(--gold);border-radius:4px;padding:40px 48px;margin-bottom:56px;}
+.webinar-banner{background:linear-gradient(135deg,#0a1a0a,#0f2010,#0a1a0a);border:1px solid rgba(201,168,76,0.3);border-left:4px solid var(--gold);border-radius:4px;padding:40px 48px;margin-bottom:56px;}
 .webinar-banner-top{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 .webinar-banner-left{flex:1;min-width:280px;}
 .webinar-free-badge{display:inline-block;background:#25a244;color:#fff;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:5px 14px;border-radius:2px;font-weight:700;margin-bottom:14px;}
 .webinar-banner h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream);margin-bottom:8px;font-weight:600;line-height:1.2;}
 .webinar-banner h3 span{color:var(--gold);}
-.webinar-banner-desc{font-size:0.95rem;color:var(--muted);line-height:1.75;}
 .webinar-details{display:flex;flex-wrap:wrap;gap:16px;margin:24px 0;}
 .webinar-detail-item{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.15);border-radius:3px;padding:12px 18px;}
 .webinar-detail-icon{font-size:1.1rem;}
@@ -78,8 +78,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .ie-primary-badge{display:inline-block;background:var(--gold);color:var(--dark);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:28px;font-weight:600;}
 .ie-left h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--cream);line-height:1.08;margin-bottom:8px;}
 .ie-left h2 span{color:var(--gold);}
-.ie-left .ie-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(245,240,232,0.6);margin-bottom:28px;}
-.ie-kriya{font-size:0.8rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:36px;font-weight:500;}
+.ie-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(245,240,232,0.6);margin-bottom:28px;}
+.ie-kriya-bar{font-size:0.8rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:36px;font-weight:500;}
 .ie-benefits{list-style:none;margin-bottom:40px;}
 .ie-benefits li{font-size:1rem;color:rgba(245,240,232,0.85);padding:10px 0 10px 26px;position:relative;border-bottom:1px solid rgba(201,168,76,0.1);}
 .ie-benefits li:last-child{border-bottom:none;}
@@ -92,10 +92,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .ie-time-text span{font-size:0.9rem;color:var(--muted);}
 .ie-sep{height:1px;background:rgba(201,168,76,0.15);margin:28px 0;}
 .ie-intro-box{background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);padding:18px 22px;margin-bottom:28px;border-radius:0 3px 3px 0;}
-.ie-intro-box .intro-lbl{font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.intro-lbl{font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:10px;}
 .ie-intro-box p{font-size:0.95rem;color:var(--cream);line-height:1.8;}
 .ie-venue-text{font-size:0.95rem;color:var(--muted);line-height:1.9;margin-bottom:8px;}
-.ie-venue-text a{color:var(--gold);text-decoration:none;font-size:0.88rem;}
+.ie-venue-text a{color:var(--gold);text-decoration:none;}
 .ie-lang{font-size:0.8rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;}
 .ie-lang strong{color:var(--cream);}
 .ie-action-buttons{display:flex;flex-direction:column;gap:12px;}
@@ -112,16 +112,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .sharing-author-name{font-size:1rem;color:var(--cream);font-weight:500;}
 .sharing-author-loc{font-size:0.78rem;color:var(--muted);margin-top:2px;}
 .data-loading{text-align:center;color:var(--muted);font-size:0.9rem;padding:40px 0;letter-spacing:0.1em;}
-.data-empty{text-align:center;color:var(--muted);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;padding:40px 0;}
 .gallery-section{background:var(--dark2);padding:96px 24px;}
 .gallery-carousel-wrap{position:relative;max-width:900px;margin:0 auto;border-radius:6px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.6);user-select:none;}
-.gallery-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
-.gallery-slide{min-width:100%;position:relative;}
+.gallery-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);will-change:transform;}
+.gallery-slide{min-width:100%;position:relative;flex-shrink:0;}
 .gallery-slide img{width:100%;height:520px;object-fit:cover;display:block;}
 .gallery-slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.72));padding:40px 28px 20px;font-size:0.9rem;color:rgba(245,240,232,0.88);font-family:'Cormorant Garamond',serif;font-style:italic;}
-.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,13,13,0.72);border:1px solid rgba(201,168,76,0.45);color:var(--gold);font-size:1.4rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.25s;z-index:10;}
-.gallery-btn:hover{background:rgba(201,168,76,0.2);}
-.gallery-btn-prev{left:16px;}.gallery-btn-next{right:16px;}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,13,13,0.75);border:1px solid rgba(201,168,76,0.5);color:var(--gold);font-size:1.5rem;width:52px;height:52px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.25s;z-index:10;}
+.gallery-btn:hover{background:rgba(201,168,76,0.25);}
+#galPrev{left:16px;}#galNext{right:16px;}
 .gallery-dots{display:flex;justify-content:center;gap:10px;margin-top:22px;}
 .gallery-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);border:1px solid rgba(201,168,76,0.4);cursor:pointer;transition:all 0.25s;}
 .gallery-dot.active{background:var(--gold);transform:scale(1.35);}
@@ -134,6 +133,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .prog-card-header.teal{background:linear-gradient(135deg,#0f3a3a,#1a6060);}
 .prog-card-header.purple{background:linear-gradient(135deg,#2e0f50,#5a2090);}
 .prog-card-header.green{background:linear-gradient(135deg,#0f3a1a,#1a6030);}
+.prog-card-header.blue{background:linear-gradient(135deg,#0f1a3a,#1a3060);}
 .prog-card-header-emoji{font-size:2.2rem;display:block;margin-bottom:12px;}
 .prog-card-date{position:absolute;top:20px;right:20px;background:rgba(0,0,0,0.35);border-radius:3px;padding:8px 14px;text-align:center;}
 .prog-card-date .d{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold-light);line-height:1;}
@@ -162,64 +162,50 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .venue-card a{color:var(--gold);text-decoration:none;font-size:0.9rem;font-weight:500;}
 footer{background:#080808;border-top:1px solid rgba(201,168,76,0.2);text-align:center;padding:56px 24px;}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--cream);margin-bottom:8px;}
-footer .footer-sub{font-size:0.78rem;color:var(--muted);letter-spacing:0.14em;margin-bottom:28px;}
-.footer-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:28px;}
-.footer-links a{color:var(--gold);text-decoration:none;font-size:0.85rem;opacity:0.85;}
-.footer-divider{width:36px;height:1px;background:rgba(201,168,76,0.3);margin:0 auto 22px;}
-footer .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+.footer-sub{font-size:0.78rem;color:var(--muted);letter-spacing:0.14em;margin-bottom:28px;}
 .footer-connect{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:28px;}
+.footer-divider{width:36px;height:1px;background:rgba(201,168,76,0.3);margin:0 auto 22px;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
 @media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.hamburger{display:flex;}.ie-feature{grid-template-columns:1fr;}.ie-left{padding:44px 28px;border-right:none;border-bottom:1px solid rgba(201,168,76,0.15);}.ie-right{padding:36px 28px;}.venue-grid{grid-template-columns:1fr;}.webinar-banner{padding:28px 24px;}.webinar-banner-top{flex-direction:column;}.webinar-banner-right{flex-direction:row;flex-wrap:wrap;}.connect-strip-inner{flex-direction:column;text-align:center;}.gallery-slide img{height:340px;}}
-@media(max-width:600px){.hero h1{font-size:2.8rem;}.programs-grid{grid-template-columns:1fr;}.hero-cta{flex-direction:column;align-items:center;}.gallery-slide img{height:240px;}.gallery-btn{display:none;}}
+@media(max-width:600px){.hero h1{font-size:2.8rem;}.programs-grid{grid-template-columns:1fr;}.hero-cta{flex-direction:column;align-items:center;}.gallery-slide img{height:240px;}.gallery-btn{width:38px;height:38px;font-size:1rem;}}
 </style>
 </head>
 <body>
-
 <nav>
-  <a class="nav-logo" href="#">
-    <span style="font-size:24px;">🪷</span>
-    <div><span class="nav-logo-text">Isha Yoga Center</span><span class="nav-logo-sub">OMR · Chennai</span></div>
-  </a>
+  <a class="nav-logo" href="#"><span style="font-size:24px">🪷</span><div><span class="nav-logo-text" id="navName">Isha Yoga Center</span><span class="nav-logo-sub" id="navLoc">OMR · Chennai</span></div></a>
   <ul class="nav-links">
     <li><a href="#webinar">Free Webinar</a></li>
-    <li><a href="#inner-engineering">Inner Engineering</a></li>
+    <li><a href="#ie">Inner Engineering</a></li>
     <li><a href="#sharings">Sharings</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#programs">Programs</a></li>
     <li><a href="#venue">Venue</a></li>
-    <li><a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="nav-cta-link">💬 WhatsApp</a></li>
+    <li><a href="#" id="navWA" class="nav-cta">💬 WhatsApp</a></li>
   </ul>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
 </nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#webinar" onclick="document.getElementById('mobileMenu').classList.remove('open')">Free Webinar</a>
-  <a href="#inner-engineering" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inner Engineering</a>
-  <a href="#sharings" onclick="document.getElementById('mobileMenu').classList.remove('open')">Sharings</a>
-  <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('open')">Gallery</a>
-  <a href="#programs" onclick="document.getElementById('mobileMenu').classList.remove('open')">Programs</a>
-  <a href="#venue" onclick="document.getElementById('mobileMenu').classList.remove('open')">Venue</a>
-  <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="mob-cta">💬 WhatsApp Enquiry</a>
+<div class="mobile-menu" id="mobMenu">
+  <a href="#webinar" onclick="document.getElementById('mobMenu').classList.remove('open')">Free Webinar</a>
+  <a href="#ie" onclick="document.getElementById('mobMenu').classList.remove('open')">Inner Engineering</a>
+  <a href="#sharings" onclick="document.getElementById('mobMenu').classList.remove('open')">Sharings</a>
+  <a href="#gallery" onclick="document.getElementById('mobMenu').classList.remove('open')">Gallery</a>
+  <a href="#programs" onclick="document.getElementById('mobMenu').classList.remove('open')">Programs</a>
+  <a href="#venue" onclick="document.getElementById('mobMenu').classList.remove('open')">Venue</a>
+  <a href="#" id="mobWA" class="mob-cta">💬 WhatsApp Enquiry</a>
 </div>
-
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-lotus">🪷</div>
-  <p class="hero-top-label">🙏 Namaskaram — Isha Yoga Center · OMR Chennai</p>
-  <h1>Inner Engineering<em>Ordinary to Extraordinary</em></h1>
+  <p class="hero-top-label">🙏 Namaskaram — <span id="heroOrgLabel"></span></p>
+  <h1 id="heroH1"></h1>
   <div class="hero-divider"></div>
-  <p class="hero-tagline">"The most fundamental thing a human being can do is to explore the nature of one's own existence."<cite>— Sadhguru</cite></p>
-  <div class="hero-date-pill">
-    <div class="lbl">7-Day Program · OMR Chennai</div>
-    <div class="val">29 April – 5 May 2026</div>
-  </div>
+  <p class="hero-tagline" id="heroTagline"></p>
+  <div class="hero-date-pill" id="heroPill"><div class="lbl" id="heroDateLabel"></div><div class="val" id="heroDateValue"></div></div>
   <div class="hero-cta">
-    <a href="#webinar" class="btn btn-gold">✨ Free Online Intro — 26 Apr</a>
-    <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-outline">Register Now</a>
-    <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
+    <a href="#webinar" class="btn btn-gold">✨ Free Online Intro</a>
+    <a href="#" id="heroRegBtn" class="btn btn-outline">Register Now</a>
+    <a href="#" id="heroWABtn" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
   </div>
 </section>
-
 <section class="section section-bg-dark" id="webinar">
   <div class="section-inner">
     <p class="section-label">✨ Coming Up First</p>
@@ -230,346 +216,259 @@ footer .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
         <div class="webinar-banner-left">
           <span class="webinar-free-badge">✦ FREE · Online · Open to All</span>
           <h3>Discover the Science of<br/><span>Inner Well-being</span></h3>
-          <p class="webinar-banner-desc">Join us for a complimentary online session to explore the Inner Engineering program — no prior experience needed.</p>
+          <p style="font-size:0.95rem;color:var(--muted);line-height:1.75;margin-bottom:0">Join us for a complimentary online session — no prior experience needed.</p>
           <div class="webinar-details">
-            <div class="webinar-detail-item"><span class="webinar-detail-icon">📅</span><div class="webinar-detail-text"><strong>Date</strong><span>Sunday, 26 April 2026</span></div></div>
-            <div class="webinar-detail-item"><span class="webinar-detail-icon">🕕</span><div class="webinar-detail-text"><strong>Time</strong><span>6:00 PM</span></div></div>
-            <div class="webinar-detail-item"><span class="webinar-detail-icon">🗣</span><div class="webinar-detail-text"><strong>Language</strong><span>English</span></div></div>
+            <div class="webinar-detail-item"><span class="webinar-detail-icon">📅</span><div class="webinar-detail-text"><strong>Date</strong><span id="wDate"></span></div></div>
+            <div class="webinar-detail-item"><span class="webinar-detail-icon">🕕</span><div class="webinar-detail-text"><strong>Time</strong><span id="wTime"></span></div></div>
+            <div class="webinar-detail-item"><span class="webinar-detail-icon">🗣</span><div class="webinar-detail-text"><strong>Language</strong><span id="wLang"></span></div></div>
             <div class="webinar-detail-item"><span class="webinar-detail-icon">💻</span><div class="webinar-detail-text"><strong>Platform</strong><span>Zoom (Online)</span></div></div>
           </div>
           <div class="webinar-zoom-box">
-            <p>💻 <strong style="color:var(--cream);">How to Join:</strong></p>
-            <a href="https://ishafoundation-org.zoom.us/j/91772021220" target="_blank" class="zoom-link">🔗 https://ishafoundation-org.zoom.us/j/91772021220</a>
+            <p>💻 <strong style="color:var(--cream)">How to Join:</strong></p>
+            <a href="#" id="zoomLink" class="zoom-link"></a>
             <div class="webinar-zoom-credentials">
-              <div class="zoom-cred"><span>Meeting ID: </span><strong>917 7202 1220</strong></div>
-              <div class="zoom-cred"><span>Passcode: </span><strong>740211</strong></div>
+              <div class="zoom-cred"><span>Meeting ID: </span><strong id="zoomId"></strong></div>
+              <div class="zoom-cred"><span>Passcode: </span><strong id="zoomPass"></strong></div>
             </div>
           </div>
         </div>
         <div class="webinar-banner-right">
-          <a href="https://ishafoundation-org.zoom.us/j/91772021220" target="_blank" class="btn btn-zoom">💻 Join Zoom Session</a>
-          <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">✍ Register for Program</a>
-          <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
+          <a href="#" id="wZoomBtn" class="btn btn-zoom">💻 Join Zoom Session</a>
+          <a href="#" id="wRegBtn" class="btn btn-gold">✍ Register for Program</a>
+          <a href="#" id="wWABtn" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="connect-strip">
   <div class="connect-strip-inner">
-    <div class="connect-strip-text">
-      <h3>💬 Have Questions? We Are Here!</h3>
-      <p>Join our WhatsApp group for enquiries, updates and program details.</p>
-    </div>
+    <div class="connect-strip-text"><h3>💬 Have Questions? We Are Here!</h3><p>Join our WhatsApp group for enquiries, updates and program details.</p></div>
     <div class="connect-strip-buttons">
-      <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp">💬 Join WhatsApp Group</a>
-      <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">✍ Register Now</a>
+      <a href="#" id="csWABtn" class="btn btn-whatsapp">💬 Join WhatsApp Group</a>
+      <a href="#" id="csRegBtn" class="btn btn-gold">✍ Register Now</a>
     </div>
   </div>
 </div>
-
-<section class="section section-bg-dark2" id="inner-engineering">
+<section class="section section-bg-dark2" id="ie">
   <div class="section-inner">
     <p class="section-label">Featured Program</p>
     <h2 class="section-title">Inner Engineering</h2>
     <div class="section-divider"></div>
-    <p class="section-sub">A 7-day transformative program bringing you the science of inner wellbeing — offered by Isha volunteers at OMR, Chennai.</p>
+    <p class="section-sub">A transformative program bringing you the science of inner wellbeing — offered by Isha volunteers at OMR, Chennai.</p>
     <div class="ie-feature">
       <div class="ie-left">
         <span class="ie-primary-badge">◆ Primary Program</span>
         <h2>Inner<br/><span>Engineering</span></h2>
-        <p class="ie-sub">Ordinary to Extraordinary</p>
-        <p class="ie-kriya">Learn · Shambhavi Mahamudra Kriya</p>
-        <ul class="ie-benefits">
-          <li>Greater Coherence within the Brain</li>
-          <li>Improved Cardiac Health</li>
-          <li>Improved Sleep Quality</li>
-          <li>Improved Attention and Focus</li>
-        </ul>
-        <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">Register — isha.co/ie-omr</a>
+        <p class="ie-sub" id="ieSubtitle"></p>
+        <p class="ie-kriya-bar" id="ieKriya"></p>
+        <ul class="ie-benefits" id="ieBenefits"></ul>
+        <a href="#" id="ieRegBtn" class="btn btn-gold">Register Now ↗</a>
       </div>
       <div class="ie-right">
         <p class="ie-block-label">🗓 Program Schedule</p>
-        <div class="ie-time-row"><span class="ie-time-icon">📅</span><div class="ie-time-text"><strong>29 April – 5 May 2026</strong></div></div>
-        <div class="ie-time-row"><span class="ie-time-icon">🌅</span><div class="ie-time-text"><strong>Monday – Saturday</strong><span>6:00–9:00 AM &amp; 6:00–9:00 PM</span></div></div>
-        <div class="ie-time-row"><span class="ie-time-icon">🌞</span><div class="ie-time-text"><strong>Sunday (Full Day)</strong><span>7:00 AM – 5:00 PM</span></div></div>
+        <div class="ie-time-row"><span class="ie-time-icon">📅</span><div class="ie-time-text"><strong id="ieDates"></strong></div></div>
+        <div class="ie-time-row"><span class="ie-time-icon">🌅</span><div class="ie-time-text"><strong>Monday – Saturday</strong><span id="ieWeekdayTime"></span></div></div>
+        <div class="ie-time-row"><span class="ie-time-icon">🌞</span><div class="ie-time-text"><strong>Sunday (Full Day)</strong><span id="ieSundayTime"></span></div></div>
         <div class="ie-sep"></div>
         <div class="ie-intro-box">
-          <div class="intro-lbl">🆓 Free Intro Talk — Wed, 29 April</div>
-          <p>🌄 Morning: 6:00–7:00 AM<br/>🌇 Evening: 6:00–7:00 PM<br/><span style="color:var(--muted);font-size:0.85rem;">No registration needed</span></p>
+          <div class="intro-lbl">🆓 Free Intro Talk — <span id="ieIntroDate"></span></div>
+          <p>🌄 Morning: <span id="ieIntroMorning"></span><br/>🌇 Evening: <span id="ieIntroEvening"></span><br/><span style="color:var(--muted);font-size:0.85rem">No registration needed</span></p>
         </div>
         <div class="ie-sep"></div>
         <p class="ie-block-label">📍 Venue</p>
-        <p class="ie-venue-text">Sree Iyappa School, Sholinganallur<br/>OMR, Chennai – 600119<br/><a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">View on Google Maps ↗</a></p>
+        <p class="ie-venue-text" id="ieVenue"></p>
         <p class="ie-lang">Language: <strong>English</strong></p>
         <div class="ie-action-buttons">
-          <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold">✍ Register — isha.co/ie-omr</a>
-          <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
-          <a href="https://ishafoundation-org.zoom.us/j/91772021220" target="_blank" class="btn btn-zoom">💻 Join Free Online Intro</a>
+          <a href="#" id="ieRegBtn2" class="btn btn-gold">✍ Register Now</a>
+          <a href="#" id="ieWABtn" class="btn btn-whatsapp">💬 WhatsApp Enquiry</a>
+          <a href="#" id="ieZoomBtn" class="btn btn-zoom">💻 Join Free Online Intro</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section section-bg-dark3" id="sharings">
   <div class="section-inner">
     <p class="section-label">Participant Sharings</p>
     <h2 class="section-title">Life After Shambhavi</h2>
     <div class="section-divider"></div>
     <p class="section-sub">Hear from those who have walked this path — real experiences from the OMR community.</p>
-    <div class="sharings-grid" id="sharingsGrid">
-      <p class="data-loading">🪷 Loading sharings...</p>
-    </div>
+    <div class="sharings-grid" id="sharingsGrid"><p class="data-loading">🪷 Loading sharings...</p></div>
   </div>
 </section>
-
 <section class="gallery-section" id="gallery">
   <div class="section-inner">
     <p class="section-label">📸 Program Moments</p>
     <h2 class="section-title">From Our OMR Community</h2>
     <div class="section-divider"></div>
     <p class="section-sub">Glimpses from programs, participants and volunteers at OMR Chennai.</p>
-    <div class="gallery-carousel-wrap" id="galleryWrap">
-      <div class="gallery-track" id="galleryTrack">
-        <div class="gallery-slide"><img src="1.jpg" alt="Photo 1"/><div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div></div>
-        <div class="gallery-slide"><img src="2.jpg" alt="Photo 2"/><div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div></div>
-        <div class="gallery-slide"><img src="3.jpg" alt="Photo 3"/><div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div></div>
-        <div class="gallery-slide"><img src="4.jpg" alt="Photo 4"/><div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div></div>
-        <div class="gallery-slide"><img src="5.jpg" alt="Photo 5"/><div class="gallery-slide-caption">Isha Yoga Center · OMR Chennai</div></div>
-      </div>
-      <button class="gallery-btn gallery-btn-prev" onclick="galleryMove(-1)">&#8592;</button>
-      <button class="gallery-btn gallery-btn-next" onclick="galleryMove(1)">&#8594;</button>
+    <div class="gallery-carousel-wrap" id="galWrap">
+      <div class="gallery-track" id="galTrack"></div>
+      <button class="gallery-btn" id="galPrev">&#8592;</button>
+      <button class="gallery-btn" id="galNext">&#8594;</button>
     </div>
-    <div class="gallery-dots" id="galleryDots">
-      <div class="gallery-dot active" onclick="galleryGoTo(0)"></div>
-      <div class="gallery-dot" onclick="galleryGoTo(1)"></div>
-      <div class="gallery-dot" onclick="galleryGoTo(2)"></div>
-      <div class="gallery-dot" onclick="galleryGoTo(3)"></div>
-      <div class="gallery-dot" onclick="galleryGoTo(4)"></div>
-    </div>
-    <div class="gallery-counter" id="galleryCounter">1 / 5</div>
+    <div class="gallery-dots" id="galDots"></div>
+    <div class="gallery-counter" id="galCounter"></div>
   </div>
 </section>
-
 <section class="section section-bg-dark" id="programs">
   <div class="section-inner">
-    <p class="section-label">April – May 2026</p>
+    <p class="section-label" id="programsLabel">Upcoming Programs</p>
     <h2 class="section-title">All Upcoming Programs</h2>
     <div class="section-divider"></div>
     <p class="section-sub">Every program is offered by trained Isha volunteers with love and commitment to the OMR community.</p>
-    <div class="programs-grid" id="programsGrid">
-      <p class="data-loading">🪷 Loading programs...</p>
-    </div>
+    <div class="programs-grid" id="programsGrid"><p class="data-loading">🪷 Loading programs...</p></div>
   </div>
 </section>
-
-<div class="quote-band">
-  <blockquote>"Yoga is not about being superhuman — it is about realizing that being human is super."<cite>— Sadhguru</cite></blockquote>
+<div class="quote-band" id="quoteBand">
+  <blockquote><span id="quoteText"></span><cite id="quoteBy"></cite></blockquote>
 </div>
-
 <section class="section section-bg-dark2" id="venue">
   <div class="section-inner">
     <p class="section-label">Find Us</p>
     <h2 class="section-title">Program Venues</h2>
     <div class="section-divider"></div>
     <p class="section-sub">All programs are held at accessible school premises along OMR, Sholinganallur.</p>
-    <div class="venue-grid">
-      <div class="venue-card">
-        <h3>📍 Sree Iyappa School</h3>
-        <p>Sholinganallur, OMR<br/>Chennai – 600119</p>
-        <p class="venue-programs">Inner Engineering · Shakti Chalana Kriya</p>
-        <a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">Open in Google Maps ↗</a>
-      </div>
-      <div class="venue-card">
-        <h3>📍 Sree Iyyappa Matric. Hr. Sec. School</h3>
-        <p>25 &amp; 30 Velu Naicker St<br/>Sholinganallur, Chennai – 600119</p>
-        <p class="venue-programs">Surya Shakthi · Children's Hatha Yoga</p>
-        <a href="https://g.co/kgs/Z1JMFm" target="_blank">Open in Google Maps ↗</a>
-      </div>
-    </div>
+    <div class="venue-grid" id="venueGrid"></div>
   </div>
 </section>
-
 <footer>
-  <div class="footer-logo">🪷 Isha Yoga Center · OMR Chennai</div>
-  <p class="footer-sub">A volunteer-run center · Sholinganallur, Chennai</p>
+  <div class="footer-logo">🪷 <span id="footerName"></span></div>
+  <p class="footer-sub" id="footerTagline"></p>
   <div class="footer-divider"></div>
   <div class="footer-connect">
-    <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold" style="padding:10px 24px;font-size:0.7rem;">✍ Register for Inner Engineering</a>
-    <a href="https://chat.whatsapp.com/CN1qp301M743ZgymRMxkTQ?mode=gi_t" target="_blank" class="btn btn-whatsapp" style="padding:10px 24px;font-size:0.7rem;">💬 WhatsApp Group</a>
-    <a href="https://ishafoundation-org.zoom.us/j/91772021220" target="_blank" class="btn btn-zoom" style="padding:10px 24px;font-size:0.7rem;">💻 Free Online Intro</a>
-  </div>
-  <div class="footer-divider"></div>
-  <div class="footer-links">
-    <a href="https://isha.co/ie-omr" target="_blank">Inner Engineering</a>
-    <a href="https://isha.co/ss-omr" target="_blank">Surya Shakthi</a>
-    <a href="https://isha.co/child-omr" target="_blank">Children's Yoga</a>
-    <a href="https://www.ishafoundation.org" target="_blank">Isha Foundation</a>
+    <a href="#" id="ftRegBtn" class="btn btn-gold" style="padding:10px 24px;font-size:0.7rem">✍ Register for Inner Engineering</a>
+    <a href="#" id="ftWABtn" class="btn btn-whatsapp" style="padding:10px 24px;font-size:0.7rem">💬 WhatsApp Group</a>
+    <a href="#" id="ftZoomBtn" class="btn btn-zoom" style="padding:10px 24px;font-size:0.7rem">💻 Free Online Intro</a>
   </div>
   <div class="footer-divider"></div>
   <p class="footer-copy">© 2026 Isha Yoga Center OMR · Offered with love by volunteers</p>
 </footer>
-
 <script>
-// ── CSV Parser ──
-function parseCSV(text) {
-  var lines = [];
-  var cur = '';
-  var inQ = false;
-  for (var i = 0; i < text.length; i++) {
-    var ch = text[i];
-    if (ch === '"') { inQ = !inQ; }
-    else if ((ch === '\n' || ch === '\r') && !inQ) {
-      if (cur.trim()) lines.push(cur);
-      cur = '';
-      continue;
-    }
-    cur += ch;
-  }
-  if (cur.trim()) lines.push(cur);
-
-  function parseLine(line) {
-    var fields = [], field = '', q = false;
-    for (var i = 0; i < line.length; i++) {
-      var c = line[i];
-      if (c === '"') {
-        if (q && line[i+1] === '"') { field += '"'; i++; }
-        else { q = !q; }
-      } else if (c === ',' && !q) { fields.push(field.trim()); field = ''; }
-      else { field += c; }
-    }
-    fields.push(field.trim());
-    return fields;
-  }
-
-  if (lines.length < 2) return [];
-  var headers = parseLine(lines[0]);
-  var rows = [];
-  for (var r = 1; r < lines.length; r++) {
-    if (!lines[r].trim()) continue;
-    var vals = parseLine(lines[r]);
-    var obj = {};
-    headers.forEach(function(h, idx) { obj[h.trim()] = (vals[idx] || '').trim(); });
-    rows.push(obj);
-  }
+function parseCSV(text){
+  var lines=[],cur='',inQ=false;
+  for(var i=0;i<text.length;i++){var ch=text[i];if(ch==='"'){inQ=!inQ;}else if((ch==='\n'||ch==='\r')&&!inQ){if(cur.trim())lines.push(cur);cur='';continue;}cur+=ch;}
+  if(cur.trim())lines.push(cur);
+  function pl(line){var fields=[],field='',q=false;for(var i=0;i<line.length;i++){var c=line[i];if(c==='"'){if(q&&line[i+1]==='"'){field+='"';i++;}else{q=!q;}}else if(c===','&&!q){fields.push(field.trim());field='';}else{field+=c;}}fields.push(field.trim());return fields;}
+  if(lines.length<2)return[];
+  var headers=pl(lines[0]),rows=[];
+  for(var r=1;r<lines.length;r++){if(!lines[r].trim())continue;var vals=pl(lines[r]),obj={};headers.forEach(function(h,i){obj[h.trim()]=(vals[i]||'').trim();});rows.push(obj);}
   return rows;
 }
+function s(id,val){var el=document.getElementById(id);if(el&&val)el.textContent=val;}
+function sh(id,val){var el=document.getElementById(id);if(el&&val)el.innerHTML=val;}
+function sl(id,val){var el=document.getElementById(id);if(el&&val)el.href=val;}
 
-// ── Programs ──
-function loadPrograms() {
-  var grid = document.getElementById('programsGrid');
-  fetch(PROGRAMS_URL)
-    .then(function(r) { return r.text(); })
-    .then(function(text) {
-      var rows = parseCSV(text).filter(function(r) { return r.name && r.name.length > 0; });
-      if (!rows.length) {
-        grid.innerHTML = '<p class="data-empty">No upcoming programs at this time. 🪷</p>';
-        return;
+var galIdx=0,galTotal=0,galTimer;
+function galRender(){
+  document.getElementById('galTrack').style.transform='translateX(-'+(galIdx*100)+'%)';
+  document.getElementById('galCounter').textContent=(galIdx+1)+' / '+galTotal;
+  document.querySelectorAll('.gallery-dot').forEach(function(d,i){d.classList.toggle('active',i===galIdx);});
+}
+function galMove(dir){galIdx=(galIdx+dir+galTotal)%galTotal;galRender();clearInterval(galTimer);galTimer=setInterval(function(){galMove(1);},4500);}
+function galGoTo(i){galIdx=i;galRender();clearInterval(galTimer);galTimer=setInterval(function(){galMove(1);},4500);}
+
+function loadConfig(){
+  fetch(CONFIG_URL).then(function(r){return r.text();}).then(function(text){
+    var rows=parseCSV(text),cfg={};
+    rows.forEach(function(r){if(!r.key||r.key.trim().charAt(0)==='#')return;cfg[r.key.trim()]=(r.value||'').trim();});
+
+    if(cfg.site_name)document.title=cfg.site_name+' – OMR Chennai';
+    s('navName',cfg.site_name);s('navLoc',cfg.site_location);
+    sl('navWA',cfg.whatsapp_url);sl('mobWA',cfg.whatsapp_url);
+
+    s('heroOrgLabel',(cfg.site_name||'')+' · '+(cfg.site_location||''));
+    if(cfg.hero_title){document.getElementById('heroH1').innerHTML=cfg.hero_title+(cfg.hero_subtitle?'<em>'+cfg.hero_subtitle+'</em>':'');}
+    if(cfg.hero_quote){document.getElementById('heroTagline').innerHTML='"'+cfg.hero_quote+'"'+(cfg.hero_quote_by?'<cite>— '+cfg.hero_quote_by+'</cite>':'');}
+    s('heroDateLabel',cfg.hero_date_label);s('heroDateValue',cfg.hero_date_value);
+    if(!cfg.hero_date_label&&!cfg.hero_date_value)document.getElementById('heroPill').style.display='none';
+    sl('heroRegBtn',cfg.register_url);sl('heroWABtn',cfg.whatsapp_url);
+
+    s('wDate',cfg.webinar_date);s('wTime',cfg.webinar_time);s('wLang',cfg.webinar_language);
+    if(cfg.zoom_url){var zl=document.getElementById('zoomLink');zl.href=cfg.zoom_url;zl.textContent='🔗 '+cfg.zoom_url;}
+    s('zoomId',cfg.zoom_id);s('zoomPass',cfg.zoom_pass);
+    sl('wZoomBtn',cfg.zoom_url);sl('wRegBtn',cfg.register_url);sl('wWABtn',cfg.whatsapp_url);
+    sl('csWABtn',cfg.whatsapp_url);sl('csRegBtn',cfg.register_url);
+
+    s('ieSubtitle',cfg.hero_subtitle);
+    if(cfg.ie_kriya)s('ieKriya','Learn · '+cfg.ie_kriya);
+    var ben='';[cfg.ie_benefit1,cfg.ie_benefit2,cfg.ie_benefit3,cfg.ie_benefit4].forEach(function(b){if(b)ben+='<li>'+b+'</li>';});
+    sh('ieBenefits',ben);
+    s('ieDates',cfg.ie_dates);s('ieWeekdayTime',cfg.ie_weekday_time);s('ieSundayTime',cfg.ie_sunday_time);
+    s('ieIntroDate',cfg.ie_intro_date);s('ieIntroMorning',cfg.ie_intro_morning);s('ieIntroEvening',cfg.ie_intro_evening);
+    if(cfg.ie_venue){document.getElementById('ieVenue').innerHTML=cfg.ie_venue+(cfg.ie_maps?'<br/><a href="'+cfg.ie_maps+'" target="_blank">View on Google Maps ↗</a>':'');}
+    sl('ieRegBtn',cfg.register_url);sl('ieRegBtn2',cfg.register_url);sl('ieWABtn',cfg.whatsapp_url);sl('ieZoomBtn',cfg.zoom_url);
+
+    if(cfg.quote)s('quoteText','"'+cfg.quote+'"');
+    if(cfg.quote_by)s('quoteBy','— '+cfg.quote_by);
+    if(!cfg.quote)document.getElementById('quoteBand').style.display='none';
+
+    var vhtml='';
+    if(cfg.venue1_name)vhtml+='<div class="venue-card"><h3>📍 '+cfg.venue1_name+'</h3><p>'+cfg.venue1_address+'</p><p class="venue-programs">'+cfg.venue1_programs+'</p>'+(cfg.venue1_maps?'<a href="'+cfg.venue1_maps+'" target="_blank">Open in Google Maps ↗</a>':'')+'</div>';
+    if(cfg.venue2_name)vhtml+='<div class="venue-card"><h3>📍 '+cfg.venue2_name+'</h3><p>'+cfg.venue2_address+'</p><p class="venue-programs">'+cfg.venue2_programs+'</p>'+(cfg.venue2_maps?'<a href="'+cfg.venue2_maps+'" target="_blank">Open in Google Maps ↗</a>':'')+'</div>';
+    if(vhtml)document.getElementById('venueGrid').innerHTML=vhtml;
+    else document.getElementById('venue').style.display='none';
+
+    s('programsLabel',cfg.programs_label);
+    s('footerName',(cfg.site_name||'')+' · '+(cfg.site_location||''));
+    s('footerTagline',cfg.footer_tagline);
+    sl('ftRegBtn',cfg.register_url);sl('ftWABtn',cfg.whatsapp_url);sl('ftZoomBtn',cfg.zoom_url);
+
+    var count=parseInt(cfg.gallery_count)||0;
+    var track=document.getElementById('galTrack'),dots=document.getElementById('galDots');
+    track.innerHTML='';dots.innerHTML='';
+    if(count>0){
+      galTotal=count;
+      for(var i=0;i<count;i++){
+        track.innerHTML+='<div class="gallery-slide"><img src="'+(i+1)+'.jpg" alt="Photo '+(i+1)+'"/><div class="gallery-slide-caption">'+(cfg.site_name||'')+' · '+(cfg.site_location||'')+'</div></div>';
+        dots.innerHTML+='<div class="gallery-dot'+(i===0?' active':'')+'" data-i="'+i+'"></div>';
       }
-      grid.innerHTML = '';
-      rows.forEach(function(p) {
-        var benefits = [p.benefit1, p.benefit2, p.benefit3, p.benefit4]
-          .filter(function(b) { return b && b.length > 0; })
-          .map(function(b) { return '<li>' + b + '</li>'; }).join('');
-        var color = (p.color || 'orange').toLowerCase();
-        var mapsHtml = p.maps_link ? '<div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="' + p.maps_link + '" target="_blank">Google Maps ↗</a></div>' : '';
-        var regHtml = p.register_link ? '<a href="' + p.register_link + '" target="_blank" class="btn btn-gold">Register Now ↗</a>' : '';
-        grid.innerHTML +=
-          '<div class="prog-card">' +
-          '<div class="prog-card-header ' + color + '">' +
-          '<span class="prog-card-header-emoji">' + (p.emoji || '🪷') + '</span>' +
-          '<div class="prog-card-date"><div class="d">' + (p.date_day || '') + '</div><div class="m">' + (p.date_month || '') + '</div></div>' +
-          '<h3>' + p.name + '</h3><p>' + (p.subtitle || '') + '</p></div>' +
-          '<div class="prog-card-body">' +
-          (p.tag ? '<span class="prog-tag">' + p.tag + '</span>' : '') +
-          '<div class="prog-meta">' +
-          (p.time ? '<div class="prog-meta-row"><span class="prog-meta-icon">🕐</span><span>' + p.time + '</span></div>' : '') +
-          (p.venue ? '<div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>' + p.venue + '</span></div>' : '') +
-          mapsHtml + '</div>' +
-          (benefits ? '<ul class="prog-benefits">' + benefits + '</ul>' : '') +
-          regHtml + '</div></div>';
-      });
-    })
-    .catch(function() {
-      grid.innerHTML = '<p class="data-empty">Could not load programs. Please try again later.</p>';
+      document.getElementById('galPrev').onclick=function(){galMove(-1);};
+      document.getElementById('galNext').onclick=function(){galMove(1);};
+      document.getElementById('galDots').addEventListener('click',function(e){var d=e.target.closest('.gallery-dot');if(d)galGoTo(parseInt(d.getAttribute('data-i')));});
+      var wrap=document.getElementById('galWrap'),sx=0;
+      wrap.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+      wrap.addEventListener('touchend',function(e){var d=sx-e.changedTouches[0].clientX;if(Math.abs(d)>40)galMove(d>0?1:-1);},{passive:true});
+      galRender();
+      galTimer=setInterval(function(){galMove(1);},4500);
+    } else {
+      document.getElementById('gallery').style.display='none';
+    }
+  }).catch(function(){console.warn('Config load failed');});
+}
+
+function loadPrograms(){
+  var grid=document.getElementById('programsGrid');
+  fetch(PROGRAMS_URL).then(function(r){return r.text();}).then(function(text){
+    var rows=parseCSV(text).filter(function(r){return r.name&&r.name.length>0;});
+    if(!rows.length){document.getElementById('programs').style.display='none';return;}
+    grid.innerHTML='';
+    rows.forEach(function(p){
+      var ben=[p.benefit1,p.benefit2,p.benefit3,p.benefit4].filter(function(b){return b&&b.length>0;}).map(function(b){return'<li>'+b+'</li>';}).join('');
+      var color=(p.color||'orange').toLowerCase();
+      var maps=p.maps_link?'<div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="'+p.maps_link+'" target="_blank">Google Maps ↗</a></div>':'';
+      var reg=p.register_link?'<a href="'+p.register_link+'" target="_blank" class="btn btn-gold">Register Now ↗</a>':'';
+      grid.innerHTML+='<div class="prog-card"><div class="prog-card-header '+color+'"><span class="prog-card-header-emoji">'+(p.emoji||'🪷')+'</span><div class="prog-card-date"><div class="d">'+(p.date_day||'')+'</div><div class="m">'+(p.date_month||'')+'</div></div><h3>'+p.name+'</h3><p>'+(p.subtitle||'')+'</p></div><div class="prog-card-body">'+(p.tag?'<span class="prog-tag">'+p.tag+'</span>':'')+'<div class="prog-meta">'+(p.time?'<div class="prog-meta-row"><span class="prog-meta-icon">🕐</span><span>'+p.time+'</span></div>':'')+(p.venue?'<div class="prog-meta-row"><span class="prog-meta-icon">📍</span><span>'+p.venue+'</span></div>':'')+maps+'</div>'+(ben?'<ul class="prog-benefits">'+ben+'</ul>':'')+reg+'</div></div>';
     });
+  }).catch(function(){document.getElementById('programs').style.display='none';});
 }
 
-// ── Sharings ──
-function loadSharings() {
-  var grid = document.getElementById('sharingsGrid');
-  fetch(SHARINGS_URL)
-    .then(function(r) { return r.text(); })
-    .then(function(text) {
-      var rows = parseCSV(text).filter(function(r) { return r.name && r.name.length > 0; });
-      if (!rows.length) {
-        grid.innerHTML = '<p class="data-empty">Sharings coming soon! 🪷</p>';
-        return;
-      }
-      grid.innerHTML = '';
-      rows.forEach(function(s) {
-        var initial = s.name.charAt(0).toUpperCase();
-        var avatarHtml = s.photo
-          ? '<img src="' + s.photo + '" alt="' + s.name + '" onerror="this.outerHTML=\'' + initial + '\'"/>'
-          : initial;
-        grid.innerHTML +=
-          '<div class="sharing-card">' +
-          '<span class="sharing-quote-icon">"</span>' +
-          '<p class="sharing-text">' + (s.quote || '') + '</p>' +
-          '<div class="sharing-author">' +
-          '<div class="sharing-author-avatar">' + avatarHtml + '</div>' +
-          '<div><div class="sharing-author-name">' + s.name + '</div>' +
-          '<div class="sharing-author-loc">' + (s.location || '') + '</div></div>' +
-          '</div></div>';
-      });
-    })
-    .catch(function() {
-      grid.innerHTML = '<p class="data-empty">Could not load sharings. Please try again later.</p>';
+function loadSharings(){
+  var grid=document.getElementById('sharingsGrid');
+  fetch(SHARINGS_URL).then(function(r){return r.text();}).then(function(text){
+    var rows=parseCSV(text).filter(function(r){return r.name&&r.name.length>0;});
+    if(!rows.length){document.getElementById('sharings').style.display='none';return;}
+    grid.innerHTML='';
+    rows.forEach(function(s){
+      var ini=s.name.charAt(0).toUpperCase();
+      var av=s.photo?'<img src="'+s.photo+'" alt="'+s.name+'" onerror="this.parentNode.innerHTML=\''+ini+'\'">':ini;
+      grid.innerHTML+='<div class="sharing-card"><span class="sharing-quote-icon">"</span><p class="sharing-text">'+(s.quote||'')+'</p><div class="sharing-author"><div class="sharing-author-avatar">'+av+'</div><div><div class="sharing-author-name">'+s.name+'</div><div class="sharing-author-loc">'+(s.location||'')+'</div></div></div></div>';
     });
+  }).catch(function(){document.getElementById('sharings').style.display='none';});
 }
 
-// ── Gallery ──
-var galIdx = 0;
-var galTotal = 5;
-var galAuto;
-
-function galleryRender() {
-  document.getElementById('galleryTrack').style.transform = 'translateX(-' + (galIdx * 100) + '%)';
-  document.getElementById('galleryCounter').textContent = (galIdx + 1) + ' / ' + galTotal;
-  document.querySelectorAll('.gallery-dot').forEach(function(d, i) {
-    d.classList.toggle('active', i === galIdx);
-  });
-}
-
-function galleryMove(dir) {
-  galIdx = (galIdx + dir + galTotal) % galTotal;
-  galleryRender();
-  clearInterval(galAuto);
-  galAuto = setInterval(function() { galleryMove(1); }, 4500);
-}
-
-function galleryGoTo(i) {
-  galIdx = i;
-  galleryRender();
-  clearInterval(galAuto);
-  galAuto = setInterval(function() { galleryMove(1); }, 4500);
-}
-
-// Touch swipe
-(function() {
-  var el = document.getElementById('galleryWrap');
-  var startX = 0;
-  el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
-  el.addEventListener('touchend', function(e) {
-    var diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) galleryMove(diff > 0 ? 1 : -1);
-  }, {passive:true});
-})();
-
-// ── Init ──
-galAuto = setInterval(function() { galleryMove(1); }, 4500);
+loadConfig();
 loadPrograms();
 loadSharings();
 </script>
