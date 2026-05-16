@@ -7,14 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
 <!-- ═══════════════════════════════════════════════
-     GOOGLE SHEET CONFIGURATION — EDIT THIS ONLY
-     Replace the Sheet ID below if you ever move
-     your data to a new Google Sheet.
+     GOOGLE SHEET URLS — EDIT ONLY THESE TWO LINES
+     To update: File > Share > Publish to web in
+     Google Sheets, copy each tab's CSV URL below.
 ═══════════════════════════════════════════════ -->
 <script>
-  var SHEET_ID = '1sE5hpn7N44R2PiuiTaT3r09x0AH62mPi4uTL4_QY3bc';
-  var PROGRAMS_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Programs';
-  var SHARINGS_URL  = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Sharings';
+  var PROGRAMS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=0&single=true&output=csv';
+  var SHARINGS_URL  = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk4BoKNitkGNjL43c60c9NCXcG4FC0bh5I6qaz49JJh5WJHYgMJDD2SCCVcr9wLKTw-xLTdgyUz3iN/pub?gid=111677439&single=true&output=csv';
 </script>
 
 <style>
@@ -411,7 +410,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   </div>
 </section>
 
-<!-- ══ SHARINGS — loaded from Google Sheet ══ -->
+<!-- ══ SHARINGS ══ -->
 <section class="section section-bg-dark3" id="sharings">
   <div class="section-inner">
     <p class="section-label">Participant Sharings</p>
@@ -453,7 +452,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   </div>
 </section>
 
-<!-- ══ PROGRAMS — loaded from Google Sheet ══ -->
+<!-- ══ PROGRAMS ══ -->
 <section class="section section-bg-dark" id="programs">
   <div class="section-inner">
     <p class="section-label">April – May 2026</p>
@@ -521,7 +520,8 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
 
 <!-- ══ JAVASCRIPT ══ -->
 <script>
-// ── Parse CSV text into array of objects ──
+
+// ── Parse CSV ──
 function parseCSV(text) {
   var lines = [];
   var current = '';
@@ -538,8 +538,10 @@ function parseCSV(text) {
     var fields = [], field = '', q = false;
     for (var i = 0; i < line.length; i++) {
       var c = line[i];
-      if (c === '"') { if (q && line[i+1] === '"') { field += '"'; i++; } else { q = !q; } }
-      else if (c === ',' && !q) { fields.push(field.trim()); field = ''; }
+      if (c === '"') {
+        if (q && line[i+1] === '"') { field += '"'; i++; }
+        else { q = !q; }
+      } else if (c === ',' && !q) { fields.push(field.trim()); field = ''; }
       else { field += c; }
     }
     fields.push(field.trim());
@@ -575,17 +577,18 @@ function loadPrograms() {
         var benefits = [p.benefit1, p.benefit2, p.benefit3, p.benefit4]
           .filter(function(b) { return b && b.length > 0; })
           .map(function(b) { return '<li>' + b + '</li>'; }).join('');
-        var color = p.color || 'orange';
-        var mapsHtml = p.maps_link ? '<div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="' + p.maps_link + '" target="_blank">Google Maps ↗</a></div>' : '';
-        grid.innerHTML += '<div class="prog-card">' +
-          '<div class="prog-card-header ' + color + '">' +
-            '<span class="prog-card-header-emoji">' + (p.emoji || '🪷') + '</span>' +
-            '<div class="prog-card-date"><div class="d">' + (p.date_day || '') + '</div><div class="m">' + (p.date_month || '') + '</div></div>' +
-            '<h3>' + (p.name || '') + '</h3>' +
-            '<p>' + (p.subtitle || '') + '</p>' +
-          '</div>' +
-          '<div class="prog-card-body">' +
-            '<span class="prog-tag">' + (p.tag || '') + '</span>' +
-            '<div class="prog-meta">' +
-              '<div class="prog-meta-row"><span class="prog-meta-icon">🗓</span><span>' + (p.date_day || '') + ' ' + (p.date_month || '') + '</span></div>' +
-              '<div class="prog-
+
+        var color = (p.color || 'orange').toLowerCase();
+        var mapsHtml = p.maps_link
+          ? '<div class="prog-meta-row"><span class="prog-meta-icon">🗺</span><a href="' + p.maps_link + '" target="_blank">Google Maps ↗</a></div>'
+          : '';
+        var registerHtml = p.register_link
+          ? '<a href="' + p.register_link + '" target="_blank" class="btn btn-gold">Register Now ↗</a>'
+          : '';
+
+        grid.innerHTML +=
+          '<div class="prog-card">' +
+            '<div class="prog-card-header ' + color + '">' +
+              '<span class="prog-card-header-emoji">' + (p.emoji || '🪷') + '</span>' +
+              '<div class="prog-card-date">' +
+                '<div class="d">' + (p.date_day || '') + '</div>' +
